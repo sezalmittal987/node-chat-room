@@ -1,0 +1,27 @@
+
+<%-include("partials/message")%>
+<div class="jumbotron class-centre">
+    <form action="/register" method="POST"> 
+        <div class="row" style="  padding:10px ;margin: auto;width: 50%;">
+            <label class="control-label col-sm-2" name="Username">Username:</label>
+         <input type="text" class="form-control col-sm-6" placeholder="Enter Username" name="Username" required>
+        </div>
+        <div class="row" style="  padding:10px ;margin: auto;width: 50%;">
+            <label class="control-label col-sm-2" name="Email">E-mail id:</label>
+         <input type="email" class="form-control col-sm-6" placeholder="Enter E-mail" name="Email" required>
+        </div>
+       <div class="row" style="padding:10px ; margin: auto;width: 50%;">
+       <label class="control-label col-sm-2"  name="pwd1">Password:</label>
+         <input type="password" class="form-control col-sm-6" placeholder="Enter password" name="pwd1" required>
+       </div >
+         <div class="row" style="padding:10px ; margin: auto;width: 50%;">
+         <label class="control-label col-sm-3" style="margin-left:-60px;" name="pwd2">Confirm Password:</label>
+         <input type="password" class="form-control col-sm-6" placeholder="Enter password" name="pwd2" required>
+      </div>                                                       
+     <div style="padding-top: 20px;margin-left: -100px;"> 
+        <button class="btn btn-danger col-sm-1">Submit</button>
+    </div></form>
+   
+     
+  
+</div>
