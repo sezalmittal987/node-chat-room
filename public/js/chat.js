@@ -1,2 +1,3 @@
-var socket=io('//localhost:0811/chat')
-console.log('welcome')
+var socket=io()
+
+console.log('welcome sezal')

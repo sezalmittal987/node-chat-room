@@ -37,3 +37,12 @@ footer{
       margin-top:40px;
       padding-top:20px;
   }
+  #parent{
+      position:relative
+  }
+  #absolute {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+  
+  } 
