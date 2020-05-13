@@ -4,10 +4,35 @@
     <hr>
     <div class="row">
         <div class="col-sm-6 " style="background-color:rgb(241, 241, 236);height:75vh">
-          <p><a href="/chat">Lorem ipsum...</a></p>
+          <p><ul>
+            <button id="createRoom" type="button" class="btn btn-primary"><strong>+</strong>Create Room</button>
+            <%rooms.forEach((room)=>{%><li id="roomName"><a onclick="myfunction1()"><%=room.Name%></a></li><% })%>
+          </ul></p>
         </div>
-        <div class="col-sm-6" style="background-color:rgb(211, 82, 104);height:75vh">
-          <p>Sed ut perspiciatis...</p>
+        <div id="display_users"  class="col-sm-6" style="background-color:rgb(211, 82, 104);height:75vh">
+
+         
+       
         </div>
       </div>
 </div>
+
+<script>
+ const $createRoom =document.getElementById("createRoom")
+const $roomName=document.getElementById("roomName")
+const $display_users=document.getElementById("display_users")
+const myFunction2=()=>{ $display_users.insertAdjacentHTML('afterbegin',newroomhtml)
+$createRoom.setAttribute('disabled','disabled')
+}  
+const myfunction1=()=>{
+ $display_users.insertAdjacentHTML('afterbegin',"users")
+} 
+var newroomhtml="<div class='row' style='padding:10px ; margin: auto;width: 50%'>"+
+  " <label class='control-label col-sm-3' style='margin-left:-60px;' name='pwd2'>Confirm Password:</label> "+
+  " <input type='password' class='form-control col-sm-6' placeholder='Enter password' name='pwd2' required></div>"
+ 
+$createRoom.addEventListener("click",myFunction2);
+
+
+</script>
+

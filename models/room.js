@@ -1,11 +1,15 @@
 const mongoose=require('mongoose')
 
 const roomSchema=new mongoose.Schema({
-    roomName:String,
-    users:{
-        type:[String],
+    Name:String,
+    users:[{
+        type:String,
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
         default:undefined,    
-}
+}]
 })
 
 const Room=mongoose.model('Room',roomSchema)

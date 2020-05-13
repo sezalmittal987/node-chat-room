@@ -19,17 +19,24 @@
           <p>Lo  kar lo baat</p>
         </div>
         <div class="col-sm-6" id="parent" style="background-color:rgb(241, 241, 236);height:75vh">
-          <p>pehle zara aap muskuraiye</p>
+          <div id="messages"></div>
           <div id="absolute">
-            <form><input class="col-sm-10" name="message" placeholder="Enter your message">
-            <button class="btn btn-danger col-sm-1">send</button>
+            <form id="message_form"><input id="message_input" class="col-sm-10" name="message" placeholder="Enter your message" required autocomplete="off">
+            <button id="form_button" class="btn btn-danger col-sm-1">send</button>
           </form>
           </div>
         </div>
       </div>
   </div>
     <footer>footer</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script id="message-template" type="text/template">
+      <div class="message" id="text_message">
+        <div >{{usrname}}   <span style="margin-left:75%"> <small class="text-muted ">{{createdAt}}</small></span></div><hr style="margin-top:-1px">
+       <div style="word-wrap: break-word;display:block;margin-top:-15px"><p>{{message}}</p>
+      </div></div>
 
+      </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

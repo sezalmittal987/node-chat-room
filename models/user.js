@@ -3,7 +3,8 @@ const passportLocalMongoose=require('passport-local-mongoose')
 const bcrypt=require('bcryptjs')
 const userSchema=new mongoose.Schema({
 Username:{type:String,
-    trim:true,},
+    trim:true,
+unique:true  },
     Email:{type:String,
         trim:true,
         unique:true,
@@ -13,7 +14,15 @@ pwd1:{type:String,
     trim:true,
 minlength:7,}
         
-})
+,
+socket_id:{
+    type:String,
+    default:undefined
+},
+room:{
+    type:String,
+    default:undefined
+}})
 
 // userSchema.statics.findByCredentials = async (email, password) => {
 //     const user = await User.findOne({ email })

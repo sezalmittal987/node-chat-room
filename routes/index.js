@@ -2,6 +2,7 @@ const express=require('express')
 const router=express.Router()
 const passport=require('passport')
 const User=require('../models/user')
+const Room=require('../models/room')
 const bodyParser=require('body-parser')
 const ejs=require('ejs')
 const bcrypt=require('bcryptjs')
@@ -47,10 +48,17 @@ user.save().then(() => {
     req.flash('error',err.message)});
     res.redirect('/register')
   });
-
-
-router.get('/rooms',(req,res)=>{
-    res.render('rooms')
+const room1=new Room({
+    Name:'Sezal'
+})
+room1.save()
+router.get('/rooms',(req,res)=>{ 
+    Room.find({}).populate('users').exec((error,rooms)=>{
+      if(error){return console.log(error)}
+        res.render('rooms',{rooms})
+    })
+    // Room.find({}, (err, data)=> {res.render('rooms',{data}
+    // })
 })
 
 
