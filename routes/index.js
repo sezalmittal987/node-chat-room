@@ -49,12 +49,12 @@ user.save().then(() => {
     res.redirect('/register')
   });
 const user1=new User({
-    Username:'usr3',
-    Email:'sf@f.com'
+    Username:'usr4',
+    Email:'sf@f.cscdasm'
 })
 user1.save()
 const room1=new Room({
-    Name:'room1',
+    Name:'room2',
     users:[{
        user: user1._id
     }]

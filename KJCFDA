@@ -1,0 +1,14 @@
+ <!-- <% const myfunction1=(roomName)=>{
+            const room= rooms.forEach((room)=>{return roomName===room.Name});
+                      for (var i = 0; i < room.users.length; i++){ %>
+                                     <p><%= room.users[i].Username %></p>;
+                                     <% }
+                     }   %>
+          -->
+
+
+                  // const room= rooms.forEach((room)=>{return roomName===room.Name});
+//                       for (var i = 0; i < room.users.length; i++){
+//                                     console.log( room.users[i].Username) 
+//                                     }
+//                      } 

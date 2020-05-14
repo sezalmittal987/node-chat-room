@@ -9,20 +9,19 @@
             <%rooms.forEach((room)=>{%><li id="roomName"><a onclick="myfunction1('<%=room.Name%>')"><%=room.Name%></a></li><% })%>
           </ul></p>
         </div>
+
         <div id="display_users"  class="col-sm-6" style="background-color:rgb(211, 82, 104);height:75vh">
-         <% const myfunction1=(roomName)=>{
-            const room= rooms.forEach((room)=>{return roomName===room.Name});
-                      for (var i = 0; i < room.users.length; i++){ %>
-                                     <p><%= room.users[i].Username %></p>;
-                                     <% }
-                     }   %>
-         
+     <ul> <% rooms.forEach((room)=>{for (var i = 0; i < room.users.length; i++){ %>
+  <li><%= room.users[i].Username %></li>;
+  <% }})%>
+  </ul>  
+ 
        
         </div>
       </div>
 </div>
 
-<script>
+<script type="text/javascript">
  const $createRoom =document.getElementById("createRoom")
 const $roomName=document.getElementById("roomName")
 const $display_users=document.getElementById("display_users")
@@ -38,7 +37,8 @@ var newroomhtml="<div class='row' style='padding:10px ; margin: auto;width: 50%'
   " <input type='password' class='form-control col-sm-6' placeholder='Enter password' name='pwd2' required></div>"
  
 $createRoom.addEventListener("click",myFunction2);
-
-
+const myfunction1=(roomName)=>{
+  console.log(roomName)}
+   
 </script>
 
