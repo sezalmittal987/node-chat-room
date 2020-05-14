@@ -48,8 +48,16 @@ user.save().then(() => {
     req.flash('error',err.message)});
     res.redirect('/register')
   });
+const user1=new User({
+    Username:'usr3',
+    Email:'sf@f.com'
+})
+user1.save()
 const room1=new Room({
-    Name:'Sezal'
+    Name:'room1',
+    users:[{
+       user: user1._id
+    }]
 })
 room1.save()
 router.get('/rooms',(req,res)=>{ 
@@ -57,8 +65,7 @@ router.get('/rooms',(req,res)=>{
       if(error){return console.log(error)}
         res.render('rooms',{rooms})
     })
-    // Room.find({}, (err, data)=> {res.render('rooms',{data}
-    // })
+    
 })
 
 
